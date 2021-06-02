@@ -11,19 +11,19 @@ from kivy.uix.button import Button
 senhaExiste = False
 
 # Listas que irão armazenar a senha e as escolhas do usuário
-senha = []
+senha    = []
 escolhas = []
 
 # Sorteio dos elementos da senha
 if not senhaExiste:
-    listaRadio = ['Biscoito', 'Bolacha']
-    listaSpinner = ['Carro WhatsApp', 'Carro Telegram',
-                    'Carro Discord', 'Carro Skype', 'Carro MSN']
+    listaRadio    = ['Biscoito', 'Bolacha']
+    listaSpinner  = ['Carro WhatsApp', 'Carro Telegram',
+                     'Carro Discord', 'Carro Skype', 'Carro MSN']
     listaCheckbox = ['Coca-Cola', 'Pepsi', 'Guaraná']
 
-    numSorteado = randint(0, 10)
-    radioSorteio = choice(listaRadio)
-    spinnerSorteio = choice(listaSpinner)
+    numSorteado     = randint(0, 10)
+    radioSorteio    = choice(listaRadio)
+    spinnerSorteio  = choice(listaSpinner)
     checkboxSorteio = choice(listaCheckbox)
 
     senha.append(numSorteado)
