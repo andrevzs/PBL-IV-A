@@ -4,11 +4,7 @@
 from random import randint
 from random import choice
 from kivy.app import App
-from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
-
-
-
 
 class SenhaQuebradorApp(BoxLayout):
     def gerarSenha(self):
@@ -30,6 +26,10 @@ class SenhaQuebradorApp(BoxLayout):
         return self.senha
     def numero(self):
         self.numselecionado = self.ids['numero'].text
+        if self.numselecionado == '':
+            self.ids['resposta'].text = "Você não digitou um numero"
+        if isinstance(self.numselecionado, int) != True:
+            self.ids['resposta'].text = "O numero não pode ser um texto."
         return self.numselecionado
     def check(self, n) :
         traquinas = ['Biscoito', 'Bolacha']
@@ -43,22 +43,25 @@ class SenhaQuebradorApp(BoxLayout):
         self.refriEscolhido = lista[r]
         return self.refriEscolhido
     def verificar(self):
-        Escolhidos = [int(self.numselecionado), self.TraqEscolhida, self.carroEscolhido, self.refriEscolhido]
-        certo = []
-        dici = {0:"numero", 1:"Traquinas", 2:"Carro", 3:"Refri"}
-        for i  in range(0,4):
-            if Escolhidos[i] == self.senha[i]:
-                certo.append(str(Escolhidos[i]))
-            else:
-                pass
-        acerto = ", ".join(certo)
-        if certo == []:
-            self.ids['resposta'].text = "Você não acertou nada!"
-        elif len(certo) == 4:
-            self.ids['resposta'].text = "Parabens! Você acertou tudo!"
-        else:
-            self.ids['resposta'].text =f"Você acertou: {acerto}"
+        try:
+            certo = []
+            Escolhidos = [int(self.numselecionado), self.TraqEscolhida, self.carroEscolhido, self.refriEscolhido]
+            for i  in range(0,4):
+                if Escolhidos[i] == self.senha[i]:
+                    certo.append(str(Escolhidos[i]))
+                else:
+                    pass
+            acerto = ", ".join(certo)
+            if certo == []:
+                self.ids['resposta'].text = f"Você não acertou nada!"
 
+            elif len(certo) == 4:
+                self.ids['resposta'].text = "Parabens! Você acertou tudo!"
+            else:
+                self.ids['resposta'].text =f"Você acertou: {acerto}"
+        except AttributeError:
+            self.ids['resposta'].text = "Voce esqueceu de marcar algo"
+        
 class PBLApp(App):
     def build(self):
         return SenhaQuebradorApp()
