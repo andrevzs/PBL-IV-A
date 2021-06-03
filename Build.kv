@@ -1,0 +1,61 @@
+<SenhaQuebradorApp>
+    orientation: 'vertical'
+    Label:
+        text: 'SenhaQuebrador-3000'
+    Label:
+        text: '~ Forme uma senha usando as opções e tente descobrir a verdadeira ~'
+
+    Button:
+        text: 'Clique aqui para gerar a senha!'
+        on_release: root.gerarSenha()
+
+    Label:
+        text: 'Digite um número de 0 a 10:'
+    TextInput:
+        id: numero
+        hint_text: 'Digite o número aqui'
+        on_text: root.numero()
+
+    GridLayout:
+        cols: 4
+        Label:
+            text: 'Biscoito'
+        CheckBox:
+            group: 'traquinas'
+            on_active: root.check(0)
+        Label:
+            text: 'Bolacha'
+        CheckBox:
+            group: 'traquinas'
+            on_active: root.check(1)
+
+    Label:
+        text: 'Escolha um carro drip'
+    Spinner:
+        id: spinersplendi
+        text: 'Carro mais fvck'
+        values: ['Carro WhatsApp', 'CarroTelegram', 'Carro Discord', 'Carro Skype', 'Carro MSN']
+        on_text: root.carro(spinersplendi.text)
+
+    GridLayout:
+        cols: 3
+        Label:
+            text: 'Coca-Cola'
+        Label:
+            text: 'Pepsi'
+        Label:
+            text: 'Guaraná'
+        CheckBox:
+            on_active: root.refri(0)
+        CheckBox:
+            on_active: root.refri(1)
+        CheckBox:
+            on_active: root.refri(2)
+
+    Button:
+        text: 'Verificar resultado!'
+        on_release: root.verificar()
+
+    Label:
+        id: resposta
+        text: ''

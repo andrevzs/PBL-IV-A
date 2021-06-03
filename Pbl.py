@@ -33,8 +33,8 @@ class SenhaQuebradorApp(BoxLayout):
         return self.numselecionado
     def check(self, n) :
         traquinas = ['Biscoito', 'Bolacha']
-        self.TraqEscolhida = traquinas[n]
-        return self.TraqEscolhida
+        self.traqEscolhida = traquinas[n]
+        return self.traqEscolhida
     def carro(self, c):
         self.carroEscolhido = c
         return self.carroEscolhido
@@ -45,7 +45,7 @@ class SenhaQuebradorApp(BoxLayout):
     def verificar(self):
         try:
             certo = []
-            Escolhidos = [int(self.numselecionado), self.TraqEscolhida, self.carroEscolhido, self.refriEscolhido]
+            Escolhidos = [int(self.numselecionado), self.traqEscolhida, self.carroEscolhido, self.refriEscolhido]
             for i  in range(0,4):
                 if Escolhidos[i] == self.senha[i]:
                     certo.append(str(Escolhidos[i]))
