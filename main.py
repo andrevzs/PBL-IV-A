@@ -1,6 +1,7 @@
 # PBL IV-A  ~  SenhaQuebrador
 # André Vinícius Zicka Schmidt
 # Eduardo Scaburi Costa Barros
+import sys
 from random import randint
 from random import choice
 from kivy.app import App
@@ -42,10 +43,6 @@ class SenhaQuebradorApp(BoxLayout):
 
     def numero(self):
         self.numSelecionado = self.ids['numero'].text
-        if self.numSelecionado is '':
-            self.ids['resposta'].text = 'Você não digitou nenhum núemro!'
-        if isinstance(self.numselecionado, int) != True:
-            self.ids['resposta'].text = 'O número não pode ser um texto.'
         return self.numSelecionado
 
     def check(self, n):
@@ -82,6 +79,10 @@ class SenhaQuebradorApp(BoxLayout):
                 self.ids['resposta'].text = f'Você acertou: {acerto}'
         except AttributeError:
             self.ids['resposta'].text = 'Você esqueceu de marcar alguma coisa...'
+
+    @staticmethod
+    def sair():
+        sys.exit()
 
 
 class BuildApp(App):

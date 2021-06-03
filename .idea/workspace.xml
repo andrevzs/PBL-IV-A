@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d30095e-0a92-45ce-8a66-e255ca83865e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Build.kv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pbl.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pbl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Build.kv" beforeDir="false" afterPath="$PROJECT_DIR$/Build.kv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +33,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PUCPR/Concepção de Soluções Baseadas em Aplicativos/A- Turma Completa/Code/PBL IV-A/main.py" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager" selected="Python.Pbl">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Pbl" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PBL-IV-A" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,8 +78,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Pbl" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.Pbl" />
       </list>
     </recent_temporary>
   </component>

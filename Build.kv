@@ -1,11 +1,15 @@
 <SenhaQuebradorApp>
     orientation: 'vertical'
+
     Label:
+        font_size: 20
+        font_style: 'bold'
         text: 'SenhaQuebrador-3000'
     Label:
         text: '~ Forme uma senha usando as opções e tente descobrir a verdadeira ~'
 
     Button:
+        background_color: (0.19, 0.81, 1.00)
         text: 'Clique aqui para gerar a senha!'
         on_release: root.gerarSenha()
 
@@ -17,6 +21,7 @@
         on_text: root.numero()
 
     GridLayout:
+        background_color: (0.19, 0.81, 1.00)
         cols: 4
         Label:
             text: 'Biscoito'
@@ -32,6 +37,7 @@
     Label:
         text: 'Escolha um carro drip'
     Spinner:
+        background_color: (0.49, 0.48, 0.59)
         id: spinersplendi
         text: 'Carro mais fvck'
         values: ['Carro WhatsApp', 'CarroTelegram', 'Carro Discord', 'Carro Skype', 'Carro MSN']
@@ -53,9 +59,15 @@
             on_active: root.refri(2)
 
     Button:
+        background_color: (0.19, 0.81, 1.00)
         text: 'Verificar resultado!'
         on_release: root.verificar()
 
     Label:
         id: resposta
         text: ''
+
+    Button:
+        background_color: (1.00, 0.05, 0.33)
+        text: 'SAIR'
+        on_release:root.sair()
